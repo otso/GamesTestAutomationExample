@@ -14,7 +14,6 @@ public class CoordinateLog : MonoBehaviour
 		{
 			x = (int)Mathf.Round(screenPos.x),
 			y = (int)Mathf.Round(screenPos.y),
-			deviceY = (int)Mathf.Round (Screen.height - screenPos.y),
 			name = SceneManager.GetActiveScene().name + "." + name,
 			time = Time.time,
 			type = GetType ().ToString (),
