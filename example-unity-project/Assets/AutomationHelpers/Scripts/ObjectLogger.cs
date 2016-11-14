@@ -17,7 +17,7 @@ public class ObjectLogger : MonoBehaviour
 			loggableObject = LoggedObjects [i];
 			if (loggableObject == null)
 				return;
-			loggableObject.AddComponent(System.Type.GetType("CoordinateLog"));
+			loggableObject.AddComponent<CoordinateLog>();
 		}
 
 		if (UIMenuObject != null)
@@ -31,7 +31,7 @@ public class ObjectLogger : MonoBehaviour
 				loggableObject = uiObjectChildren [i].gameObject;
 				if (loggableObject == null)
 					return;
-				loggableObject.AddComponent (System.Type.GetType ("UIcoordinateLog"));
+				loggableObject.AddComponent<UICoordinateLog>();
 			}
 		}
 	}
