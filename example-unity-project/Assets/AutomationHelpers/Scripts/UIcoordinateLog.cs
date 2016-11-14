@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class UICoordinateLog : MonoBehaviour
@@ -34,7 +35,7 @@ public class UICoordinateLog : MonoBehaviour
 			x = (int)Mathf.Round (screenPos.x),
 			y = (int)Mathf.Round (screenPos.y),
 			deviceY = (int)Mathf.Round (Screen.height - screenPos.y),
-			name = name,
+			name = SceneManager.GetActiveScene().name + "." + name,
 			time = Time.time,
 			type = GetType ().ToString (),
 		};
