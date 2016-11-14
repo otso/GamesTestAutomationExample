@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -10,6 +11,8 @@ public class ObjectLogger : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		SceneStartToLog ();
+
 		Debug.Log ("Adding scripts to log position of " + LoggedObjects.Length + " Gameobject components");
 		GameObject loggableObject;
 		for (int i = 0 ; i < LoggedObjects.Length ; i++)
@@ -34,5 +37,11 @@ public class ObjectLogger : MonoBehaviour
 				loggableObject.AddComponent<UICoordinateLog>();
 			}
 		}
+	}
+
+	void SceneStartToLog()
+	{
+		Debug.Log (string.Format("Automation: {{\"event\" : \"scene_entered\", \"scene_name\" : \"{0}\"}}", 
+			SceneManager.GetActiveScene().name));
 	}
 }
